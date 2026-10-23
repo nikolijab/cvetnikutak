@@ -40,7 +40,7 @@ a:hover{color:#5a7a48}
 </style>
 </helmet>
 
-<header style="position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,4vw,48px);transition:background .4s, box-shadow .4s;background:{{ navBg }};box-shadow:{{ navShadow }};backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+<header style="position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(clamp(20px,5vw,72px), calc((100% - 1280px) / 2));transition:background .4s, box-shadow .4s;background:{{ navBg }};box-shadow:{{ navShadow }};backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
   <a href="#vrh" aria-label="Cvetni kutak, početak" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#3f3233">
     <img src="img/logo.png" alt="Logo Cvećara Cvetni kutak Aleksinac" width="52" height="52" style="width:52px;height:52px;border-radius:50%;background:#ffffff;box-shadow:0 4px 14px -6px rgba(63,50,51,.35);flex:none">
     <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:26px;line-height:1">Cvetni kutak</span>
@@ -100,7 +100,7 @@ a:hover{color:#5a7a48}
 
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,239,235,0) 45%,rgba(247,239,235,.85) 100%);pointer-events:none"></div>
 
-    <div ref="{{ frontRef }}" style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:0 clamp(20px,5vw,72px) clamp(40px,9vh,96px);max-width:1280px;will-change:transform,opacity">
+    <div ref="{{ frontRef }}" style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:0 clamp(20px,5vw,72px) clamp(40px,9vh,96px);width:100%;max-width:calc(1280px + 2 * clamp(20px,5vw,72px));margin:0 auto;will-change:transform,opacity">
       <p style="margin:0;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#5a7a48">
         <span style="width:28px;height:1px;background:currentColor"></span>Cvećara · Aleksinac
       </p>
@@ -117,7 +117,7 @@ a:hover{color:#5a7a48}
     </div>
   </section>
 
-  <section id="o-nama" data-screen-label="O nama" style="padding:clamp(56px,8vw,104px) clamp(20px,5vw,72px);max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+  <section id="o-nama" data-screen-label="O nama" style="padding:clamp(56px,8vw,104px) clamp(20px,5vw,72px);max-width:calc(1280px + 2 * clamp(20px,5vw,72px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
     <div data-reveal="" style="display:flex;flex-direction:column;gap:20px">
       <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,6vw,80px);line-height:.98;letter-spacing:-.01em;text-wrap:balance">Mali kutak, <span style="font-style:italic;color:#b0767f">puno cveća.</span></h2>
     </div>
@@ -178,7 +178,7 @@ a:hover{color:#5a7a48}
   </section>
 
   <sc-if value="{{ hasReviews }}" hint-placeholder-val="{{ false }}">
-    <section aria-label="Recenzije" data-screen-label="Recenzije" style="padding:0 clamp(20px,5vw,72px) clamp(56px,8vw,104px);max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,56px)">
+    <section aria-label="Recenzije" data-screen-label="Recenzije" style="padding:0 clamp(20px,5vw,72px) clamp(56px,8vw,104px);max-width:calc(1280px + 2 * clamp(20px,5vw,72px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,56px)">
       <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
         <figure data-reveal="" style="margin:0;display:flex;flex-direction:column;gap:20px">
           <span aria-hidden="true" style="font-family:'Instrument Serif',serif;font-size:72px;line-height:.5;color:#e79aab">“</span>
